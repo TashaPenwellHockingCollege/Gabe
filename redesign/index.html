@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hocking College | AWS Academy</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+        @import url(https://fonts.googleapis.com/css?family=Catamaran:100,200,300,regular,500,600,700,800,900);
+        @import url(https://fonts.googleapis.com/css?family=Raleway:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+        :root {
+            --hocking-blue: #0081C5;
+            --hocking-yellow: #FBB031;
+            --hocking-green: #009E49;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body:after {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            -moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            content: '';
+            background-image: url('./assets/images/bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .title-area {
+            font-size: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-shadow: 0px 0px 8px rgb(73, 73, 73);
+        }
+
+        .title-wrapper {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding-bottom: 1vmin;
+        }
+
+        .title {
+            line-height: 1em;
+            margin: 0;
+        }
+
+        .sub-title {
+            margin: 0;
+        }
+
+        .navigation {
+            position: sticky;
+            top: 0;
+            font-size: 2em;
+            z-index: 1;
+            /* border-bottom: 8px solid var(--hocking-yellow); */
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        .links-list {
+            width: 100%;
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            font-family: 'Raleway';
+            align-items: center;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .title-area {
+                font-size: 1.4em;
+            }
+
+            ul.links-list {
+                font-size: 5vw;
+            }
+        }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .link:nth-child(odd) a {
+            background-color: rgb(3, 139, 212);
+        }
+
+        .link a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0.5vmin;
+            color: white;
+            text-align: center;
+            line-height: 1.1em;
+            text-decoration: none;
+            background-color: var(--hocking-blue);
+            transition: all 0.2s;
+        }
+
+        .link a:hover,
+        a:focus {
+            color: var(--hocking-yellow);
+            background-color: hsl(201, 100%, 35%);
+        }
+
+        .content-wrapper {
+            margin: 5vmin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--hocking-green);
+            box-shadow: 0px 0px 7px rgb(44, 44, 44);
+        }
+
+        .content-header {
+            font-family: 'Montserrat';
+            text-align: center;
+            padding: 2vmin;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .content-header {
+                font-size: 1em;
+            }
+        }
+
+        .accredited-img {
+            width: 50%;
+            max-width: 35vh;
+        }
+
+        .content {
+            width: 90%;
+            font-family: 'Catamaran';
+            font-size: 1.2em;
+        }
+
+        .video-container {
+            width: 100%;
+            margin-bottom: 5vmin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1E1F23;
+        }
+
+        .video-container>* {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-container>header {
+            width: 80%;
+            margin-top: 3%;
+            padding-top: 2%;
+            background-color: #121315;
+            color: white;
+            border-radius: 2vmin 2vmin 0 0;
+        }
+
+        .video-wrapper {
+            width: 80%;
+            height: 0;
+            margin-bottom: 3%;
+            padding-bottom: 62.88%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0 0 2vmin 2vmin;
+        }
+
+        .video-wrapper>iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-container h2 {
+            font-family: 'Raleway';
+            padding-bottom: 2%;
+            position: relative;
+            margin: 0;
+        }
+
+        .video-container h2::after {
+            content: '';
+            position: absolute;
+            margin: auto;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 1px;
+            background-color: rgb(112, 112, 112);
+
+        }
+
+        .video-container p {
+            font-family: 'Montserrat';
+            text-align: center;
+            color: rgb(112, 112, 112);
+        }
+
+        .pricing-tiers {
+            width: 90%;
+            padding: 3%;
+            margin-bottom: 2vmin;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            color: white;
+            font-size: 1.3em;
+            background-color: black;
+            background-image: url('./assets/images/backgroundImage.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .pricing-tiers>div {
+            margin: 0 1vmin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(48, 48, 48);
+            box-shadow: 0px 0px 7px black;
+        }
+
+        .pricing-tiers h3 {
+            margin: 3%;
+            font-family: 'Montserrat';
+            text-decoration: underline solid white;
+        }
+
+        .pricing-tiers h4 {
+            margin: 3%;
+            font-family: 'Montserrat';
+        }
+
+        .pricing-tiers ul {
+            margin: 2em;
+            font-family: 'Catamaran';
+            list-style: disc outside;
+        }
+
+        .pricing-tiers span {
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, auto);
+            }
+
+            .pricing-tiers > div {
+                margin: 1vmin 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="title-area">
+            <div class="title-wrapper">
+                <h1 class="title">AWS Academy</h1>
+                <h6 class="sub-title">at Hocking College</h6>
+            </div>
+        </header>
+        <nav class="navigation">
+            <ul class="links-list">
+                <li class="link"><a href="#index">Home</a></li>
+                <li class="link"><a href="https://www.hocking.edu" target="_blank">Hocking College</a></li>
+                <li class="link"><a href="https://aws.amazon.com/" target="_blank">AWS</a></li>
+                <li class="link"><a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="content-wrapper">
+            <h2 class="content-header">Prepare for AWS Certifications at Hocking College</h2>
+            <img class="accredited-img" src="./assets//images/Accredited Instructor Logo.png"
+                alt="AWS Accredited Instructor">
+            <h2 class="content-header">Bridging the Gap Between Industry and Academia</h2>
+            <p class="content">As cloud technologies continue to help organizations transform at a rapid pace, employees
+                with the necessary cloud skills are in high demand. According to LinkedIn data, cloud computing is the
+                number one hard skill companies need most. AWS Academy provides higher education institutions with a
+                free, ready-to-teach cloud computing curriculum that prepares students to pursue industry-recognized
+                certifications and in-demand cloud jobs. Our curriculum helps educators stay at the forefront of AWS
+                Cloud innovation so that they can equip students with the skills they need to get hired in one of the
+                fastest-growing industries.</p>
+
+            <div class="video-container">
+                <header>
+                    <h2>Why AWS Academy?</h2>
+                    <p>Authorized Content Create by AWS</p>
+                </header>
+
+                <div class="video-wrapper">
+                    <iframe width="660" height="415" src="https://www.youtube.com/embed/aIlAMJQkDPg" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+
+            <div class="pricing-tiers">
+                <div class="tier-1">
+                    <h3>Tier 1</h3>
+                    <h4>$3,000</h4>
+                    <ul>
+                        <li>Enroll up to 5 students</li>
+                        <li>Online courses</li>
+                        <li><span>Academy Cloud Fundamentals Accredited Instructor</span> will be available for video
+                            call weekly
+                        </li>
+                    </ul>
+                </div>
+                <div class="tier-2">
+                    <h3>Tier 2</h3>
+                    <h4>$6,000</h4>
+                    <ul>
+                        <li>Enroll up to 15 students</li>
+                        <li>Online courses</li>
+                        <li><span>Academy Cloud Fundamentals Accredited Instructor</span> will be available for video
+                            call weekly
+                        </li>
+                    </ul>
+                </div>
+                <div class="tier-3">
+                    <h3>Tier 3</h3>
+                    <h4>$9,000</h4>
+                    <ul>
+                        <li>Enroll up to 30 students</li>
+                        <li>Online courses</li>
+                        <li><span>Academy Cloud Fundamentals Accredited Instructor</span> will be available for video
+                            call weekly
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
